@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bffpolmd3xp06"]
+
+[ext_resource type="Script" uid="uid://cchxye6u00u14" path="res://ghost.gd" id="1_v5pp4"]
+[ext_resource type="Texture2D" uid="uid://b7xivpdmi613e" path="res://icon.svg" id="2_6attn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_obmiq"]
+radius = 33.0
+height = 126.0
+
+[node name="Ghost" type="CharacterBody2D" unique_id=2038705121]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_v5pp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=120810606]
+modulate = Color(1, 0, 0, 0.92941177)
+scale = Vector2(0.53125, 1)
+texture = ExtResource("2_6attn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924288452]
+shape = SubResource("CapsuleShape2D_obmiq")

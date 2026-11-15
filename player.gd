@@ -1,9 +1,11 @@
+class_name PlayerController2D
 extends CharacterBody2D
-
 
 const MAX_SPEED: int = 300
 const ACCEL: int = 10
 const FRICTION: int = 8
+
+var recorded_frames: Array[Transform2D] = []
 
 func _physics_process(delta: float) -> void:
 	var input = Vector2(
@@ -16,4 +18,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	
+	recorded_frames.append(global_transform)
+
+func reset_recording() -> void:
+	recorded_frames.clear()

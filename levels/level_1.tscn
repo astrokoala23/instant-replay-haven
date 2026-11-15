@@ -2,8 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://dnyq7dtic8iq0" path="res://player.tscn" id="1_vn7o3"]
 [ext_resource type="Script" uid="uid://vlvye87o1f1k" path="res://player.gd" id="2_jirdo"]
+[ext_resource type="PackedScene" uid="uid://c2oj5evgam716" path="res://pressure_plate.tscn" id="3_bt44k"]
+[ext_resource type="Script" uid="uid://cbyms0tiqiy65" path="res://levels/game_manager.gd" id="4_kx6l7"]
+[ext_resource type="PackedScene" uid="uid://bffpolmd3xp06" path="res://ghost.tscn" id="5_n46q3"]
 
 [node name="Level 1" type="Node2D" unique_id=1546906954]
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=369468409]
+position = Vector2(163, 333)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1590410711]
+position = Vector2(578, 322)
+
 [node name="Player" parent="." unique_id=1875707035 instance=ExtResource("1_vn7o3")]
+position = Vector2(163, 328)
 script = ExtResource("2_jirdo")
+
+[node name="Pressure Plate" parent="." unique_id=217173839 instance=ExtResource("3_bt44k")]
+position = Vector2(569, 160)
+
+[node name="Node" type="Node" parent="." unique_id=195782816 node_paths=PackedStringArray("player", "spawn_point")]
+script = ExtResource("4_kx6l7")
+player = NodePath("../Player")
+ghost_scene = ExtResource("5_n46q3")
+spawn_point = NodePath("../Marker2D")
