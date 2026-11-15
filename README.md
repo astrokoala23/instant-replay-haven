@@ -8,7 +8,7 @@ Instant Replay is a game created for Hackclub Haven themed on the topic of **Bou
 
 Watch the Intro Video Here: [https://user-cdn.hackclub-assets.com/01a1df56-960d-702b-affd-f2878e3cf967/download.mp4](https://user-cdn.hackclub-assets.com/01a1df56-960d-702b-affd-f2878e3cf967/download.mp4)
 
-Our game is listed on itch.io where you can view it [here]. The player can be controlled by WASD or the arrow keys, everytime you touch a pressure plate you are taken back to your starting position and a duplicatre version of yourself repeats the action you did. You can use this to hold down multiple pressure plates at the same time to unlock doors.
+The player can be controlled by the arrow keys, everytime you hit 'R',  you are taken back to your starting position and a duplicatre version of yourself repeats the action you did. You can use this to hold down multiple pressure plates at the same time to unlock doors.
 
 ## Backstory
 
