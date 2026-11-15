@@ -4,11 +4,35 @@ extends Node
 @export var player: CharacterBody2D
 @export var ghost_scene: PackedScene
 @export var spawn_point: Node2D # Starting point
+@export var win_label: Label # Drag your WinLabel node here in the Inspector
 
 @onready var player_recorder: CharacterBody2D = player
 
 var all_ghosts_data: Array[Array] = []
 var active_ghosts: Array[Node2D] = []
+var level_won: bool = false
+
+func _ready() -> void:
+	# Hide the win text at the start of the level
+	if win_label:
+		win_label.visible = false
+
+func _process(_delta: float) -> void:
+	if level_won:
+		return
+		
+	var all_pads: Array[Node] = get_tree().get_nodes_in_group("pressure_pads")
+	
+	# Checks if ALL pads in the group are currently pressed
+	if not all_pads.is_empty() and all_pads.all(func(pad): return pad.is_entered):
+		trigger_win()
+
+func trigger_win() -> void:
+	level_won = true
+	print("YOU WIN! All pressure pads are pressed!")
+	
+	if win_label:
+		win_label.visible = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	print("Input received: ", event.as_text())

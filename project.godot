@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Instant Replay"
-run/main_scene="uid://bp1ftcjltstxa"
+run/main_scene="uid://7yx4x8wvij7r"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
